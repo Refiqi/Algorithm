@@ -26,4 +26,17 @@ def chunk(arr, size)
     chunked
 end
 
+def chunk_v1(arr, size)
+    chunked = []; index = 0
+
+    while index < arr.length
+        chunked.push(arr.slice(index...index + size))
+        index += size
+    end
+
+    chunked
+end
+
+
 p chunk(array, 2)
+p chunk_v1(array, 2)

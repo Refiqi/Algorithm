@@ -28,9 +28,10 @@ def steps num
                 stair += '*'
             end
         end
+
+        puts stair
     end
 
-    stair
 end
 
-puts steps(5)
+steps(5)

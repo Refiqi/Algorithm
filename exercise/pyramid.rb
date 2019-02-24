@@ -14,21 +14,42 @@
 #       ' ### '
 #       '#####'
 
-def pyramid num
-    mid_point = (2 * num - 1) / 2
+# Iterate Method
 
-    (0...num).each do |row|
-        level = ''
-        (0...(2 * num - 1)).each do |column|
-            if mid_point - row <= column && mid_point + row >= column
-                level += '#'
-            else
-                level += ' '
-            end
-        end
+# def pyramid num
+#     mid_point = (2 * num - 1) / 2
 
+#     (0...num).each do |row|
+#         level = ''
+#         (0...(2 * num - 1)).each do |column|
+#             if mid_point - row <= column && mid_point + row >= column
+#                 level += '#'
+#             else
+#                 level += ' '
+#             end
+#         end
+
+#         puts level
+#     end
+# end
+
+def pyramid(num, row = 0, level = '')
+    return if num === row
+
+    if 2 * num - 1 === level.length
         puts level
+        return pyramid(num, row + 1)
     end
+
+    mid_point = (2 * num - 1) / 2
+    if mid_point - row <= level.length && mid_point + row >= level.length
+        level += '#'
+    else
+        level += ' '
+    end
+
+    pyramid(num, row, level)
 end
+
 
 pyramid(5)

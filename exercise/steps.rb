@@ -27,11 +27,7 @@ def steps (n, row = 0, stair = '')
         return steps(n, row + 1)
     end
 
-    if stair.length <= row
-        stair += '#'
-    else
-        stair += ' '
-    end
+    stair.length <= row ? stair += '#' : stair += ' '
 
     steps(n, row, stair)
 end
